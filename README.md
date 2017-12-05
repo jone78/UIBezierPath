@@ -1,7 +1,7 @@
 # UIBezierPath
 UIBezierPath 绘制曲线
 
-if (self.ShapeLayer2) {
+    if (self.ShapeLayer2) {
         self.ShapeLayer2.path    = nil;
         [self.ShapeLayer2 removeFromSuperlayer];
     }
@@ -36,22 +36,22 @@ if (self.ShapeLayer2) {
     [array0 addObject:[NSValue valueWithCGPoint:pointhui5]];
     [array0 addObject:[NSValue valueWithCGPoint:pointhui6]];
 
-UIBezierPath *path = [UIBezierPath bezierPath];
+    UIBezierPath *path = [UIBezierPath bezierPath];
     path.lineWidth     = 1;
     path.lineCapStyle  = kCGLineCapSquare; //线条拐角
     path.lineJoinStyle = kCGLineCapRound; //终点处理
 
-CGPoint linpoint0=[[array0 objectAtIndex:0] CGPointValue];
+    CGPoint linpoint0=[[array0 objectAtIndex:0] CGPointValue];
     CGPoint linpoint1=[[array0 objectAtIndex:1] CGPointValue];
     CGPoint linpoint2=[[array0 objectAtIndex:2] CGPointValue];
     CGPoint linpoint3=[[array0 objectAtIndex:3] CGPointValue];
     CGPoint linpoint4=[[array0 objectAtIndex:4] CGPointValue];
     CGPoint linpoint5=[[array0 objectAtIndex:5] CGPointValue];
     CGPoint linpoint6=[[array0 objectAtIndex:6] CGPointValue];
-
+    
     
     [path moveToPoint:linpoint0];
-
+    
     [self getControlPointx0:0 andy0:0 x1:linpoint0.x andy1:linpoint0.y x2:linpoint1.x andy2:linpoint1.y x3:linpoint2.x andy3:linpoint2.y path:path];
     
     [self getControlPointx0:linpoint0.x andy0:linpoint0.y x1:linpoint1.x andy1:linpoint1.y x2:linpoint2.x andy2:linpoint2.y x3:linpoint3.x andy3:linpoint3.y path:path];
@@ -59,7 +59,7 @@ CGPoint linpoint0=[[array0 objectAtIndex:0] CGPointValue];
     [self getControlPointx0:linpoint1.x andy0:linpoint1.y x1:linpoint2.x andy1:linpoint2.y x2:linpoint3.x andy2:linpoint3.y x3:linpoint4.x andy3:linpoint4.y path:path];
 
 
-for (int i=0; i<array0.count; i++) {
+     for (int i=0; i<array0.count; i++) {
         CALayer *lind=[CALayer new];
         lind.frame=CGRectMake(0, 0, 10, 10);
         lind.cornerRadius=5;
@@ -68,10 +68,10 @@ for (int i=0; i<array0.count; i++) {
         CGPoint linpoint=[[array0 objectAtIndex:i] CGPointValue];
         lind.position=linpoint;
         [self.ShapeLayer2 addSublayer:lind];
-    }
+     } 
 
 
-self.ShapeLayer2.path        = path.CGPath;
+    self.ShapeLayer2.path        = path.CGPath;
     self.ShapeLayer2.strokeStart = 0.0;
     self.ShapeLayer2.strokeEnd   = 0.0;
     
@@ -82,14 +82,14 @@ self.ShapeLayer2.path        = path.CGPath;
     animation.duration           = 2.0f;
     self.ShapeLayer2.strokeEnd   = 1.0;
     [self.ShapeLayer2 addAnimation:animation forKey:nil];
-
+    
 
 
 
 # 算法
 
--(void) getControlPointx0:(CGFloat)x0 andy0:(CGFloat)y0
-
+   -(void) getControlPointx0:(CGFloat)x0 andy0:(CGFloat)y0
+    
                        x1:(CGFloat)x1 andy1:(CGFloat)y1
 
                        x2:(CGFloat)x2 andy2:(CGFloat)y2
@@ -98,7 +98,7 @@ self.ShapeLayer2.path        = path.CGPath;
 
                      path:(UIBezierPath*) path
 
-{
+   {
     
     CGFloat smooth_value =0.6;
     
@@ -150,13 +150,13 @@ self.ShapeLayer2.path        = path.CGPath;
     
     [path addCurveToPoint:CGPointMake(x2, y2) controlPoint1:CGPointMake(ctrl1_x, ctrl1_y)controlPoint2:CGPointMake(ctrl2_x, ctrl2_y)];
     
-}
+    }
 
 
 
 
 
--(NSMutableArray *)huoqu:(NSMutableArray *)arr andva:(CGFloat)smooth_value{
+    -(NSMutableArray *)huoqu:(NSMutableArray *)arr andva:(CGFloat)smooth_value{
     
     CGPoint point0=[[arr objectAtIndex:0] CGPointValue];
     CGPoint point1=[[arr objectAtIndex:1] CGPointValue];
@@ -206,7 +206,7 @@ self.ShapeLayer2.path        = path.CGPath;
     [array addObject:[NSValue valueWithCGPoint:pointhui1]];
     
     return array;
-}
+    }
 
 
 
