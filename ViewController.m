@@ -19,12 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-//    FKCurveView *viewa=[[FKCurveView alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:viewa];
-    
+    // Do any additional setup after loading the view, typically from a nib.    
     
     if (self.ShapeLayer2) {
         self.ShapeLayer2.path    = nil;
@@ -60,11 +55,6 @@
     [array0 addObject:[NSValue valueWithCGPoint:pointhui4]];
     [array0 addObject:[NSValue valueWithCGPoint:pointhui5]];
     [array0 addObject:[NSValue valueWithCGPoint:pointhui6]];
-
-//    NSMutableArray *lingarry=[self huoqu:array0 andva:1];
-//    
-//    
-//    NSLog(@"%@",lingarry);
     
     
     
