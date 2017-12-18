@@ -42,6 +42,8 @@ UIBezierPath 绘制曲线
     path.lineCapStyle  = kCGLineCapSquare; //线条拐角
     path.lineJoinStyle = kCGLineCapRound; //终点处理
 
+
+
     CGPoint linpoint0=[[array0 objectAtIndex:0] CGPointValue];
     CGPoint linpoint1=[[array0 objectAtIndex:1] CGPointValue];
     CGPoint linpoint2=[[array0 objectAtIndex:2] CGPointValue];
